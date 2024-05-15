@@ -15,100 +15,100 @@
 ==/UserStyle== */
 
 @-moz-document domain("takealot.com") {
-  @media (prefers-color-scheme: light) {
-    :root {
-      #catppuccin(@lightFlavor, @accentColor);
+    @media (prefers-color-scheme: light) {
+      :root {
+        #catppuccin(@lightFlavor, @accentColor);
+      }
     }
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      #catppuccin(@darkFlavor, @accentColor);
+    @media (prefers-color-scheme: dark) {
+      :root {
+        #catppuccin(@darkFlavor, @accentColor);
+      }
     }
-  }
 
-  #catppuccin(@lookup, @accent) {
-    @rosewater: @catppuccin[@@lookup][@rosewater];
-    @flamingo: @catppuccin[@@lookup][@flamingo];
-    @pink: @catppuccin[@@lookup][@pink];
-    @mauve: @catppuccin[@@lookup][@mauve];
-    @red: @catppuccin[@@lookup][@red];
-    @maroon: @catppuccin[@@lookup][@maroon];
-    @peach: @catppuccin[@@lookup][@peach];
-    @yellow: @catppuccin[@@lookup][@yellow];
-    @green: @catppuccin[@@lookup][@green];
-    @teal: @catppuccin[@@lookup][@teal];
-    @sky: @catppuccin[@@lookup][@sky];
-    @sapphire: @catppuccin[@@lookup][@sapphire];
-    @blue: @catppuccin[@@lookup][@blue];
-    @lavender: @catppuccin[@@lookup][@lavender];
-    @text: @catppuccin[@@lookup][@text];
-    @subtext1: @catppuccin[@@lookup][@subtext1];
-    @subtext0: @catppuccin[@@lookup][@subtext0];
-    @overlay2: @catppuccin[@@lookup][@overlay2];
-    @overlay1: @catppuccin[@@lookup][@overlay1];
-    @overlay0: @catppuccin[@@lookup][@overlay0];
-    @surface2: @catppuccin[@@lookup][@surface2];
-    @surface1: @catppuccin[@@lookup][@surface1];
-    @surface0: @catppuccin[@@lookup][@surface0];
-    @base: @catppuccin[@@lookup][@base];
-    @mantle: @catppuccin[@@lookup][@mantle];
-    @crust: @catppuccin[@@lookup][@crust];
-    @accent-color: @catppuccin[@@lookup][@@accent];
+    #catppuccin(@lookup, @accent) {
+      @rosewater: @catppuccin[@@lookup][@rosewater];
+      @flamingo: @catppuccin[@@lookup][@flamingo];
+      @pink: @catppuccin[@@lookup][@pink];
+      @mauve: @catppuccin[@@lookup][@mauve];
+      @red: @catppuccin[@@lookup][@red];
+      @maroon: @catppuccin[@@lookup][@maroon];
+      @peach: @catppuccin[@@lookup][@peach];
+      @yellow: @catppuccin[@@lookup][@yellow];
+      @green: @catppuccin[@@lookup][@green];
+      @teal: @catppuccin[@@lookup][@teal];
+      @sky: @catppuccin[@@lookup][@sky];
+      @sapphire: @catppuccin[@@lookup][@sapphire];
+      @blue: @catppuccin[@@lookup][@blue];
+      @lavender: @catppuccin[@@lookup][@lavender];
+      @text: @catppuccin[@@lookup][@text];
+      @subtext1: @catppuccin[@@lookup][@subtext1];
+      @subtext0: @catppuccin[@@lookup][@subtext0];
+      @overlay2: @catppuccin[@@lookup][@overlay2];
+      @overlay1: @catppuccin[@@lookup][@overlay1];
+      @overlay0: @catppuccin[@@lookup][@overlay0];
+      @surface2: @catppuccin[@@lookup][@surface2];
+      @surface1: @catppuccin[@@lookup][@surface1];
+      @surface0: @catppuccin[@@lookup][@surface0];
+      @base: @catppuccin[@@lookup][@base];
+      @mantle: @catppuccin[@@lookup][@mantle];
+      @crust: @catppuccin[@@lookup][@crust];
+      @accent-color: @catppuccin[@@lookup][@@accent];
 
-    --ctp-rosewater: #rgbify(@rosewater) [];
-    --ctp-flamingo: #rgbify(@flamingo) [];
-    --ctp-pink: #rgbify(@pink) [];
-    --ctp-mauve: #rgbify(@mauve) [];
-    --ctp-red: #rgbify(@red) [];
-    --ctp-maroon: #rgbify(@maroon) [];
-    --ctp-peach: #rgbify(@peach) [];
-    --ctp-yellow: #rgbify(@yellow) [];
-    --ctp-green: #rgbify(@green) [];
-    --ctp-teal: #rgbify(@teal) [];
-    --ctp-sky: #rgbify(@sky) [];
-    --ctp-sapphire: #rgbify(@sapphire) [];
-    --ctp-blue: #rgbify(@blue) [];
-    --ctp-lavender: #rgbify(@lavender) [];
-    --ctp-text: #rgbify(@text) [];
-    --ctp-subtext1: #rgbify(@subtext1) [];
-    --ctp-subtext0: #rgbify(@subtext0) [];
-    --ctp-overlay2: #rgbify(@overlay2) [];
-    --ctp-overlay1: #rgbify(@overlay1) [];
-    --ctp-overlay0: #rgbify(@overlay0) [];
-    --ctp-surface2: #rgbify(@surface2) [];
-    --ctp-surface1: #rgbify(@surface1) [];
-    --ctp-surface0: #rgbify(@surface0) [];
-    --ctp-base: #rgbify(@base) [];
-    --ctp-mantle: #rgbify(@mantle) [];
-    --ctp-crust: #rgbify(@crust) [];
+      --ctp-rosewater: #rgbify(@rosewater) [];
+      --ctp-flamingo: #rgbify(@flamingo) [];
+      --ctp-pink: #rgbify(@pink) [];
+      --ctp-mauve: #rgbify(@mauve) [];
+      --ctp-red: #rgbify(@red) [];
+      --ctp-maroon: #rgbify(@maroon) [];
+      --ctp-peach: #rgbify(@peach) [];
+      --ctp-yellow: #rgbify(@yellow) [];
+      --ctp-green: #rgbify(@green) [];
+      --ctp-teal: #rgbify(@teal) [];
+      --ctp-sky: #rgbify(@sky) [];
+      --ctp-sapphire: #rgbify(@sapphire) [];
+      --ctp-blue: #rgbify(@blue) [];
+      --ctp-lavender: #rgbify(@lavender) [];
+      --ctp-text: #rgbify(@text) [];
+      --ctp-subtext1: #rgbify(@subtext1) [];
+      --ctp-subtext0: #rgbify(@subtext0) [];
+      --ctp-overlay2: #rgbify(@overlay2) [];
+      --ctp-overlay1: #rgbify(@overlay1) [];
+      --ctp-overlay0: #rgbify(@overlay0) [];
+      --ctp-surface2: #rgbify(@surface2) [];
+      --ctp-surface1: #rgbify(@surface1) [];
+      --ctp-surface0: #rgbify(@surface0) [];
+      --ctp-base: #rgbify(@base) [];
+      --ctp-mantle: #rgbify(@mantle) [];
+      --ctp-crust: #rgbify(@crust) [];
 
-    color-scheme: if(@lookup = latte, light, dark);
+      color-scheme: if(@lookup = latte, light, dark);
 
-    html, body {
-      background: @crust;
-      min-height: 100vh;
-    }
+      html, body {
+          background: @crust;
+          min-height: 100vh;
+      }
       
-    html  {
-      min-height: 100%;
-    }
+      html  {
+          min-height: 100%;
+      }
 
-    /* Top navigation bar */
-    .top-nav, .compact-header {
-      background: @base;
-    }
+      /* Top navigation bar */
+      .top-nav, .compact-header {
+          background: @base;
+      }
 
       .top-nav .icon-link {
           color: #fefefe!important;
       }
       
-    [data-ref="name-item"] {
+      [data-ref="name-item"] {
       color: @text;
-    }
-
+      }
+      
       a.button.dark-green, .button.dark-green, button.button.dark-green, .button-primary {
       color: #fefefe!important;
-    }
+      }
       
       
       /* Search navbar */
@@ -211,7 +211,7 @@
           }
       }
       
-    /* Breadcrumbs */
+      /* Breadcrumbs */
       .steps .step-container.disabled .step {
           color: @overlay0;
       }
@@ -220,12 +220,14 @@
       }
 
     
-    /* Content */
-    section div {
-        background: @surface0;      
-    }
+      /* Content */
+      section div {
+          background: @surface0;      
+      }
       
-      
+      .search-count {
+          color: @text;
+      }
       .toolbar {
           p, span {
               color: @text!important;
@@ -293,6 +295,22 @@
     .product-thumb-share .product-slide {
         border: 1px solid @accent-color;
     }
+      
+      .step-header { // Mobile screen Delivery > Payment > Confirmation nav/header
+          background: @base;
+          
+          h1 {
+              color: @text;
+          }
+          
+          .steps, .step-container::before, .step-container::after {
+              background: @surface0;
+          }
+          
+          .steps a::before, .steps a::after {
+              background: @crust;
+          }
+      }
           .wish.ghost {
               background-color: rgba(#rgbify(@mantle) [], 0.05)!important;
               color: @red!important;
@@ -495,7 +513,7 @@
       }
       
       /* Footer */
-      footer {
+      .sf:not(.checkout) footer {
           background: @mantle;
           border-top: 1px solid @surface2;
           
@@ -529,7 +547,7 @@
       color: @sapphire !important;
       &:hover {
         color: @teal !important;
-      }
+        }
     }
   }
 }
