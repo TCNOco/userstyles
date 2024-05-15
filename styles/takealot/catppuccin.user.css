@@ -1,0 +1,549 @@
+/* ==UserStyle==
+@name Takealot Catppuccin
+@namespace github.com/TCNOco/userstyles/styles/takealot
+@version 0.0.1
+@updateURL https://github.com/TCNOco/userstyles/raw/main/styles/takealot/catppuccin.user.css
+@supportURL https://github.com/TCNOco/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Atakealot
+@description Soothing pastel theme for Takealot
+@author TCNOco
+@license GNU GPL v3
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire*", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@-moz-document domain("takealot.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      #catppuccin(@lightFlavor, @accentColor);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      #catppuccin(@darkFlavor, @accentColor);
+    }
+  }
+
+  #catppuccin(@lookup, @accent) {
+    @rosewater: @catppuccin[@@lookup][@rosewater];
+    @flamingo: @catppuccin[@@lookup][@flamingo];
+    @pink: @catppuccin[@@lookup][@pink];
+    @mauve: @catppuccin[@@lookup][@mauve];
+    @red: @catppuccin[@@lookup][@red];
+    @maroon: @catppuccin[@@lookup][@maroon];
+    @peach: @catppuccin[@@lookup][@peach];
+    @yellow: @catppuccin[@@lookup][@yellow];
+    @green: @catppuccin[@@lookup][@green];
+    @teal: @catppuccin[@@lookup][@teal];
+    @sky: @catppuccin[@@lookup][@sky];
+    @sapphire: @catppuccin[@@lookup][@sapphire];
+    @blue: @catppuccin[@@lookup][@blue];
+    @lavender: @catppuccin[@@lookup][@lavender];
+    @text: @catppuccin[@@lookup][@text];
+    @subtext1: @catppuccin[@@lookup][@subtext1];
+    @subtext0: @catppuccin[@@lookup][@subtext0];
+    @overlay2: @catppuccin[@@lookup][@overlay2];
+    @overlay1: @catppuccin[@@lookup][@overlay1];
+    @overlay0: @catppuccin[@@lookup][@overlay0];
+    @surface2: @catppuccin[@@lookup][@surface2];
+    @surface1: @catppuccin[@@lookup][@surface1];
+    @surface0: @catppuccin[@@lookup][@surface0];
+    @base: @catppuccin[@@lookup][@base];
+    @mantle: @catppuccin[@@lookup][@mantle];
+    @crust: @catppuccin[@@lookup][@crust];
+    @accent-color: @catppuccin[@@lookup][@@accent];
+
+    --ctp-rosewater: #rgbify(@rosewater) [];
+    --ctp-flamingo: #rgbify(@flamingo) [];
+    --ctp-pink: #rgbify(@pink) [];
+    --ctp-mauve: #rgbify(@mauve) [];
+    --ctp-red: #rgbify(@red) [];
+    --ctp-maroon: #rgbify(@maroon) [];
+    --ctp-peach: #rgbify(@peach) [];
+    --ctp-yellow: #rgbify(@yellow) [];
+    --ctp-green: #rgbify(@green) [];
+    --ctp-teal: #rgbify(@teal) [];
+    --ctp-sky: #rgbify(@sky) [];
+    --ctp-sapphire: #rgbify(@sapphire) [];
+    --ctp-blue: #rgbify(@blue) [];
+    --ctp-lavender: #rgbify(@lavender) [];
+    --ctp-text: #rgbify(@text) [];
+    --ctp-subtext1: #rgbify(@subtext1) [];
+    --ctp-subtext0: #rgbify(@subtext0) [];
+    --ctp-overlay2: #rgbify(@overlay2) [];
+    --ctp-overlay1: #rgbify(@overlay1) [];
+    --ctp-overlay0: #rgbify(@overlay0) [];
+    --ctp-surface2: #rgbify(@surface2) [];
+    --ctp-surface1: #rgbify(@surface1) [];
+    --ctp-surface0: #rgbify(@surface0) [];
+    --ctp-base: #rgbify(@base) [];
+    --ctp-mantle: #rgbify(@mantle) [];
+    --ctp-crust: #rgbify(@crust) [];
+
+    color-scheme: if(@lookup = latte, light, dark);
+
+    html, body {
+      background: @crust;
+      min-height: 100vh;
+    }
+      
+    html  {
+      min-height: 100%;
+    }
+
+    /* Top navigation bar */
+    .top-nav, .compact-header {
+      background: @base;
+    }
+
+      .top-nav .icon-link {
+          color: #fefefe!important;
+      }
+      
+    [data-ref="name-item"] {
+      color: @text;
+    }
+
+      a.button.dark-green, .button.dark-green, button.button.dark-green, .button-primary {
+      color: #fefefe!important;
+    }
+      
+      
+      /* Search navbar */
+      header {
+          .search-container, .search-container .search-field {
+              background: @mantle!important;
+              color: @text;
+          }
+      }
+      
+      .result-wrapper .result-list {
+          background: @surface0;
+          border-top: 1px solid @overlay0;
+          
+          h4 {
+              color: @text;
+          }
+          
+          li:not(:last-of-type) {
+              border-bottom: 1px solid @overlay1;
+          }
+          
+          span {
+              color: @text!important;
+          }
+      }
+      
+      .recent-search button:hover {
+              background: @surface1 url("data:image/svg+xml,%3Csvg fill=%22rgb(219,219,221)%22 xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z%22/%3E%3Cpath d=%22M0 0h24v24H0z%22 fill=%22none%22/%3E%3Cpath d=%22M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z%22/%3E%3C/svg%3E") 16px 7px no-repeat!important;
+      }
+      .trending-search button:hover {
+          background: @surface1 url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 height=%2220%22 width=%2220%22 viewBox=%220 0 24 24%22 xml:space=%22preserve%22%3E%3Cdefs%3E%3CclipPath id=%22a%22 clipPathUnits=%22userSpaceOnUse%22%3E%3Cpath d=%22m123.332 100 19.086-19.082L101.75 40.25 68.418 73.582 6.668 11.75 18.418 0l50 50 33.332-33.332 52.5 52.414L173.332 50v50z%22 clip-rule=%22evenodd%22/%3E%3C/clipPath%3E%3CclipPath id=%22b%22 clipPathUnits=%22userSpaceOnUse%22%3E%3Cpath d=%22M0 0h180v100H0Z%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path=%22url(%23a)%22 transform=%22matrix(.13333 0 0 -.13333 0 13.333)%22%3E%3Cg clip-path=%22url(%23b)%22%3E%3Cpath d=%22M0 0h183.332v110H0Z%22 fill=%22rgb(11,121,191)%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") 16px 12px no-repeat!important;
+      }
+      
+      .term-option:not(.trending-search):not(.recent-search) button:hover {
+          background: @surface1!important;
+      }
+      
+      
+      .dropdown-toggle-container .label {
+          color: @text!important;
+          background: @crust url("data:image/svg+xml,%3Csvg fill=%22rgb(255,255,255)%22 xmlns=%22http://www.w3.org/2000/svg%22 width=%2218%22 height=%2218%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z%22/%3E%3Cpath d=%22M0 0h24v24H0z%22 fill=%22none%22/%3E%3C/svg%3E") no-repeat right 6px top 50%!important;
+      }
+      
+      .dropdown-toggle-container .dropdown-toggle {
+          background: @surface0;
+          span {
+              color: @text!important;
+          }
+          .card {
+              border: 1px solid @surface0;
+          }
+          .card > div {
+              > span {
+                  color: #0b79bf!important;
+              }
+              
+              div:nth-of-type(2n - 1) {
+                  background: @surface0;
+              }
+              div:nth-of-type(2n) {
+                  background: @surface1;
+              }
+          }
+      }
+      
+      /* Category navbar */
+      .sf > div:nth-of-type(4):not(.grid-container) { // This does not have a unique class, instead only a z-index and position.
+          > div > div { // Top padding above bar
+              background: @surface0;
+              > div {
+                  background: @surface0;
+              }
+          }
+      }
+      
+      .deals-tabs { // The first named child of the category navbar
+          background: @surface0;
+          button {
+              background: @surface0;
+          }
+          
+          .swiper-slide {
+              background: @surface0;
+              
+              a {
+                  color: @text!important;
+              }
+              
+              [class*="deals-tabs-module_active"] {
+                  background: @base;
+              }
+              [class*="deals-tabs-module_active-bar"] {
+                  background: #0b79bf!important;
+              }
+              
+              &:hover a {
+                  background: @surface1;
+              }
+          }
+      }
+      
+    /* Breadcrumbs */
+      .steps .step-container.disabled .step {
+          color: @overlay0;
+      }
+      .steps .step-container.active .step {
+          color: @text;
+      }
+
+    
+    /* Content */
+    section div {
+        background: @surface0;      
+    }
+      
+      
+      .toolbar {
+          p, span {
+              color: @text!important;
+          }
+      }
+      
+      /* Content Ad spots? Cards advertising Superbalist & Mr.D under items */
+      .group-card {
+          background: @base;
+          
+          a.button, .button, button.button {
+              background: @mantle;
+              color: @text!important;
+              
+              &:hover {
+                  background: @surface0;
+              }
+              &:active {
+                background: @crust;
+              }
+          }
+      }
+      
+      /* Sponsored Deals */
+      [class*="deals-sponsored-widget-module_deals-sponsored-widget"] {
+          background: @base!important;
+          
+          h2  {
+              color: @text;
+          }
+      }
+      
+      [class*="sponsored-product-card-module_sponsored-product-card"] {
+          background: @base;
+          border: solid 0.5px @surface2;
+          
+          &:hover {
+              background: @surface0;
+          }
+          
+          div { // Title & Price
+              color: @text!important;
+          }
+          
+          .wish.ghost {
+              background-color: rgba(#rgbify(@mantle) [], 0.5)!important;
+              
+              &:hover {
+              background-color: rgba(#rgbify(@mantle) [], 1)!important;
+              }
+          }
+          
+          .list-price span{
+              color: @subtext0!important;
+          }
+      }
+     
+    /* Checkout */
+    .checkout-confirmation .content-cell p {
+      color: @subtext1;
+    }
+    .checkout-confirmation .content-cell h1 {
+        color: @text;
+    }
+    .product-thumb-share .product-slide {
+        border: 1px solid @accent-color;
+    }
+          .wish.ghost {
+              background-color: rgba(#rgbify(@mantle) [], 0.05)!important;
+              color: @red!important;
+              
+              &:hover {
+                  background-color: rgba(#rgbify(@mantle) [], 0.8)!important;
+              }
+              
+              &:active {
+                  background-color: rgba(#rgbify(@mantle) [], 1)!important;
+              }
+              
+              &.undefined { // This seems to appear for items when they are wishlisted already/active
+                  background-color: @mantle!important;
+              }
+              
+              svg {
+                  color: @red!important;
+              }
+          }
+     
+      /* Deals */
+      .product-card {
+          background: @base;
+
+          .product-title {
+              color: @subtext0!important;
+          }
+          [data-ref="price"], .price span {
+              color: @text!important;
+          }
+          [data-ref="list-price"], .list-price span{
+              color: @subtext0!important;
+          }
+          .promotion-qty {
+              color: @red;
+          }
+      }
+      
+      /* Categories */
+      .widget-container .success { // Fix odd background color in sidebar
+          background: @mantle;
+      }
+      .category-widget, .filters-header {
+          background: @base!important;
+          
+          h3 {
+            color: @text!important;
+          }
+          
+          a {
+              color: @text!important;
+          }
+      }
+      .category-widget > div:first-of-type {
+          border-bottom: 1px solid @accent-color!important;
+      }
+      .list-nav-item.parent-item {
+          background: @mantle!important;
+          &:hover {
+              background: @surface1!important;
+          }
+      }
+      .btn-area button {
+          background: @surface0!important;
+          &:hover {
+              background: @surface1!important;
+          }
+      }
+      .all-categories { //Is not just "All Categories", but is the selectedd category.
+          background: @base!important;
+          &:hover {
+              background: @surface1!important;
+          }
+      }
+      .list-nav-item {
+          background: @surface0;
+          &:hover {
+              background: @surface2!important;
+          }
+      }
+      
+      /* Filters (below categories sidebar) */
+       .sf-accordion-item {
+           background: @mantle!important;
+           border: solid 2px @surface0;
+           
+            button.trigger {
+                background: @mantle!important;
+                &:hover {
+                    background: @surface0!important;
+                }
+            }
+           
+          .collapsible.override-trigger .trigger div.drop-button {
+              color:@text;
+
+              &:hover {
+                  color:@accent-color;
+
+                  .plusminus::before, .plusminus::after {
+                    background-color:@accent-color!important;
+                  }
+              }
+          }
+           
+           .bar-chart, .bar-chart button {
+               background: @base;
+           }
+           .bar-chart button:hover {
+               background: @surface0;
+           }
+           
+           .radio-select-container {
+               background: @base;
+           }
+           .radio-select-container:hover {
+               background: @surface0;
+           }
+      }
+      
+       #scroll-container > div > div:first-of-type, .sf-expanded > div > div:not(.facet-search):first-of-type, .scroll-wrapper > div:first-of-type { // This is the JS scrollbar. ::webkit-scrollbar would work great - but is incompatible with a particular popular browser... So this is used instead. OK. However, at -15 the scrollbar is just visible,so I'v pushed it one further.
+               margin-right: -16px!important;
+               margin-bottom: -16px!important;
+           }
+      
+      .facet-search {
+          .filter-search-container {
+              background: @mantle;
+
+              .input:hover {
+                  background: @base!important;
+                  border-bottom: 2px solid @accent-color;
+              }
+
+              .material-input.text.focus label .input {
+                  background: @surface0;
+              }
+
+              input {
+                  border: 1px solid @accent-color!important;
+                  color: @text!important;
+
+                  &:focus  {
+                      background: @base;
+                  }  
+              }
+          }
+          
+          p {
+              color: @subtext0!important;
+          }
+      }
+      
+      .checkbox, .radio-select {
+          background-color: @base;
+
+          &:hover  {
+              background-color: @surface0;
+          }
+
+          &.on {
+              background: @surface0;
+              &:hover  {
+                  background-color: @surface2;
+              }
+              
+              .radio-select-content::before {
+                background-color: #fff;
+              }
+          }
+
+          &:not(.on)::before, .radio-select-content::before {
+              background-color: @mantle;
+              border: 1px solid @surface1;
+          }
+
+          span {
+            color: @text;
+          }
+      }
+      
+       
+      select {
+          background: @base!important;
+          color: @text!important;
+          
+          &:hover {
+              background: @surface0!important;
+          }
+          
+       }
+      
+      /* Modals */
+      .modal {
+          background: @base;
+          p {
+              color: @text;
+          }
+      }
+      
+      /* Footer */
+      footer {
+          background: @mantle;
+          border-top: 1px solid @surface2;
+          
+          h3 {
+              color: @text;
+          }
+          
+          a {
+              color: @subtext0!important;
+          }
+      }
+      
+
+    ::selection {
+      background-color: fade(@accent-color, 30%);
+    }
+
+    input,
+    textarea {
+      &::placeholder {
+        color: @subtext0 !important;
+      }
+    }
+
+    body {
+      color: @text !important;
+    }
+
+    /* links */
+    a, button {
+      color: @sapphire !important;
+      &:hover {
+        color: @teal !important;
+      }
+    }
+  }
+}
+
+#rgbify(@color) {
+  @rgb-raw: red(@color), green(@color), blue(@color);
+}
+
+/* prettier-ignore */
+@catppuccin: {
+  @latte:     { @rosewater: #dc8a78; @flamingo: #dd7878; @pink: #ea76cb; @mauve: #8839ef; @red: #d20f39; @maroon: #e64553; @peach: #fe640b; @yellow: #df8e1d; @green: #40a02b; @teal: #179299; @sky: #04a5e5; @sapphire: #209fb5; @blue: #1e66f5; @lavender: #7287fd; @text: #4c4f69; @subtext1: #5c5f77; @subtext0: #6c6f85; @overlay2: #7c7f93; @overlay1: #8c8fa1; @overlay0: #9ca0b0; @surface2: #acb0be; @surface1: #bcc0cc; @surface0: #ccd0da; @base: #eff1f5; @mantle: #e6e9ef; @crust: #dce0e8; };
+  @frappe:    { @rosewater: #f2d5cf; @flamingo: #eebebe; @pink: #f4b8e4; @mauve: #ca9ee6; @red: #e78284; @maroon: #ea999c; @peach: #ef9f76; @yellow: #e5c890; @green: #a6d189; @teal: #81c8be; @sky: #99d1db; @sapphire: #85c1dc; @blue: #8caaee; @lavender: #babbf1; @text: #c6d0f5; @subtext1: #b5bfe2; @subtext0: #a5adce; @overlay2: #949cbb; @overlay1: #838ba7; @overlay0: #737994; @surface2: #626880; @surface1: #51576d; @surface0: #414559; @base: #303446; @mantle: #292c3c; @crust: #232634; };
+  @macchiato: { @rosewater: #f4dbd6; @flamingo: #f0c6c6; @pink: #f5bde6; @mauve: #c6a0f6; @red: #ed8796; @maroon: #ee99a0; @peach: #f5a97f; @yellow: #eed49f; @green: #a6da95; @teal: #8bd5ca; @sky: #91d7e3; @sapphire: #7dc4e4; @blue: #8aadf4; @lavender: #b7bdf8; @text: #cad3f5; @subtext1: #b8c0e0; @subtext0: #a5adcb; @overlay2: #939ab7; @overlay1: #8087a2; @overlay0: #6e738d; @surface2: #5b6078; @surface1: #494d64; @surface0: #363a4f; @base: #24273a; @mantle: #1e2030; @crust: #181926; };
+  @mocha:     { @rosewater: #f5e0dc; @flamingo: #f2cdcd; @pink: #f5c2e7; @mauve: #cba6f7; @red: #f38ba8; @maroon: #eba0ac; @peach: #fab387; @yellow: #f9e2af; @green: #a6e3a1; @teal: #94e2d5; @sky: #89dceb; @sapphire: #74c7ec; @blue: #89b4fa; @lavender: #b4befe; @text: #cdd6f4; @subtext1: #bac2de; @subtext0: #a6adc8; @overlay2: #9399b2; @overlay1: #7f849c; @overlay0: #6c7086; @surface2: #585b70; @surface1: #45475a; @surface0: #313244; @base: #1e1e2e; @mantle: #181825; @crust: #11111b; };
+}
+
+// vim:ft=less
